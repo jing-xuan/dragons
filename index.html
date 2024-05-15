@@ -11,12 +11,20 @@
             {
                 display: block;
             }
+            #inputcontainer{
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+                row-gap: 10px;
+            }
             .slidecontainer {
                 width: 80%; /* Width of the outside container */
-                margin: 0 auto;
-                margin-bottom: 20px;
                 display: flex;
                 flex-direction: row;
+                justify-content: center;
                 align-items: center;
             }
             .slider {
@@ -24,10 +32,10 @@
                 --l: 5px; /* line thickness*/
                 --s: 20px; /* thumb size*/
                 appearance: none;
-                background: none;
-                width: 100%; /* Full-width */
+                width: 500px; /* Full-width */
                 height: 25px; /* Specified height */
                 outline: none; /* Remove outline */
+                background: none;
                 opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
                 -webkit-transition: .2s; /* 0.2 seconds transition on hover */
                 transition: opacity .2s;
@@ -63,22 +71,38 @@
             }
             p {
                 color: white;
-                margin-top: 0px;
-                margin-bottom: 0px;
+                width:150px;
+                margin: 0px;
+                text-align: center;
+            }
+            .startLabel {
+                margin-right: 15px;
+                text-align:right;
+            }
+            .endLabel {
+                margin-left: 15px;
+                text-align:left;
             }
         </style>
     </head>
     <body>
         <canvas id = "canvas">
         </canvas>
-        <div class="slidecontainer">
-            <p>Levy</p>
-            <input type="range" min="0" max="10" value="1" class="slider" id="curveType">
-            <p>Heighway</p>
-        </div>
-        <div class="slidecontainer">
-            <p>iterations</p>
-            <input type="range" min="1" max="10" value="1" class="slider" id="iterations">
+        <div id="inputcontainer">
+                    <p>Curve Type</p>   
+            <div class="slidecontainer">
+                    <p class="startLabel">Levy</p>
+                <input type="range" min="0" max="10" value="1" class="slider" id="curveType">
+                <p class="endLabel">Heighway</p>
+            </div>
+        
+                    <p>Iterations</p>   
+                
+            <div class="slidecontainer">
+                    <p class="startLabel"> 0</p>
+                <input type="range" min="0" max="10" value="1" class="slider" id="iterations">
+                <p class="endLabel">10</p>
+            </div>
         </div>
     </body>
     <script>
